@@ -14,30 +14,21 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-//        mavenLocal()
-        google()
-        mavenCentral()
-    }
+package com.google.ai.edge.gallery.feature.expense
+
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import kotlinx.serialization.Serializable
+
+/** Navigation destination for the expense feature */
+object ExpenseDestination {
+  @Serializable
+  val route = "ExpenseRoute"
 }
 
-rootProject.name = "AI Edge Gallery"
-include(":app")
-include(":feature-expense")
+@Composable
+fun ExpenseScreen(modifier: Modifier = Modifier) {
+  Text(text = "Expense feature", modifier = modifier)
+}
 
- 
