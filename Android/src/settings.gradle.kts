@@ -39,4 +39,5 @@ dependencyResolutionManagement {
 rootProject.name = "AI Edge Gallery"
 include(":app")
 include(":feature-expense")
+
  
