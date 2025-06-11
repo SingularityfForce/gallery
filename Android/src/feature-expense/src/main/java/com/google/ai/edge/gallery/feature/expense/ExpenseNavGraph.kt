@@ -14,30 +14,14 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-//        mavenLocal()
-        google()
-        mavenCentral()
-    }
+package com.google.ai.edge.gallery.feature.expense
+
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+
+fun NavGraphBuilder.expenseGraph(navigateUp: () -> Unit) {
+  composable(route = ExpenseDestination.route) {
+    ExpenseScreen()
+  }
 }
 
-rootProject.name = "AI Edge Gallery"
-include(":app")
-include(":feature-expense")
-
- 
